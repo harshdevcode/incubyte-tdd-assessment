@@ -20,4 +20,12 @@ describe('String Calculator', () => {
   test('handles new lines as delimiter', () => {
     expect(Add('1\n2,3')).toBe(6);
   });
+
+  test('handles custom single-character delimiter', () => {
+    expect(Add('//;\n1;2')).toBe(3);
+  });
+
+  test('handles delimiters of any length', () => {
+    expect(Add('//[***]\n1***2***3')).toBe(6);
+  });
 });
