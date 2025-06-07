@@ -26,7 +26,8 @@ function Add(numbers)
     const negatives = numberList.filter(n => n < 0);
     if (negatives.length) {
         throw new Error(`negatives not allowed: ${negatives.join(', ')}`);
-  }    
+  }  
+  return numberList.filter(n => n <= 1000).reduce((acc, curr) => acc + curr, 0);  
 }
 
 

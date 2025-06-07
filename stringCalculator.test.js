@@ -29,6 +29,11 @@ describe('String Calculator', () => {
     expect(() => Add('1,-2,-3')).toThrow('negatives not allowed: -2, -3');
   });
 
+  test('ignores numbers bigger than 1000', () => {
+    expect(Add('2,1001')).toBe(2);
+  });
+
+
   test('handles delimiters of any length', () => {
     expect(Add('//[***]\n1***2***3')).toBe(6);
   });
