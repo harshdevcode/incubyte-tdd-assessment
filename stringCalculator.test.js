@@ -25,6 +25,10 @@ describe('String Calculator', () => {
     expect(Add('//;\n1;2')).toBe(3);
   });
 
+   test('throws on negative numbers with all negatives in message', () => {
+    expect(() => Add('1,-2,-3')).toThrow('negatives not allowed: -2, -3');
+  });
+
   test('handles delimiters of any length', () => {
     expect(Add('//[***]\n1***2***3')).toBe(6);
   });

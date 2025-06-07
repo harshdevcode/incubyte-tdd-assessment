@@ -23,6 +23,10 @@ function Add(numbers)
         .map(n => parseInt(n, 10))
         .filter(n => !isNaN(n));
 
+    const negatives = numberList.filter(n => n < 0);
+    if (negatives.length) {
+        throw new Error(`negatives not allowed: ${negatives.join(', ')}`);
+  }    
 }
 
 
