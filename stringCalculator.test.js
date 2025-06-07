@@ -15,6 +15,7 @@ describe('String Calculator', () => {
 
   test('handles unknown amount of numbers', () => {
     expect(Add('1,2,3,4')).toBe(10);
+    expect(Add('5,5,5,5,5')).toBe(25);
   });
 
   test('handles new lines as delimiter', () => {

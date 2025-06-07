@@ -30,5 +30,9 @@ function Add(numbers)
   return numberList.filter(n => n <= 1000).reduce((acc, curr) => acc + curr, 0);  
 }
 
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 
 module.exports = { Add };
