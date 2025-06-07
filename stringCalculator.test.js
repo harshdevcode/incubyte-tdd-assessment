@@ -33,8 +33,15 @@ describe('String Calculator', () => {
     expect(Add('2,1001')).toBe(2);
   });
 
-
   test('handles delimiters of any length', () => {
     expect(Add('//[***]\n1***2***3')).toBe(6);
+  });
+
+  test('handles multiple single-char delimiters', () => {
+    expect(Add('//[*][%]\n1*2%3')).toBe(6);
+  });
+
+  test('handles multiple multi-char delimiters', () => {
+    expect(Add('//[**][%%]\n1**2%%3')).toBe(6);
   });
 });
