@@ -12,4 +12,12 @@ describe('String Calculator', () => {
   test('returns sum for two comma-separated numbers', () => {
     expect(Add('1,2')).toBe(3);
   });
+
+  test('handles unknown amount of numbers', () => {
+    expect(Add('1,2,3,4')).toBe(10);
+  });
+
+  test('handles new lines as delimiter', () => {
+    expect(Add('1\n2,3')).toBe(6);
+  });
 });
